@@ -1,0 +1,38 @@
+/* Colours */
+$black: #000;
+$white: #ffffff;
+$accent-primary: #FFD978;
+$txt-primary: $white;
+$txt-dark: #1c1325;
+
+/* Component Specific Colours */
+$input-gradient: linear-gradient(to top, #2c2433, #4e4450 );
+$background-gradient: linear-gradient(225deg, #86338C, #38003C);
+
+/* Fonts */
+$primary-font: 'Source Sans Pro', sans-serif;
+
+/* Breakpoints */
+$break-mobile:  400px;
+$break-phablet: 640px;
+$break-tablet:  840px;
+$break-desktop: 1025px;
+$break-wide:    1300px;
+
+/* Z-Index Layers */
+$level-zero: 0;
+$level-one: 10;
+$level-two: 20;
+$level-three: 30;
+$level-four: 40;
+$level-five: 50;
+
+/* Layout */
+$wrapper-width: 108.6rem;
+$page-padding: 3rem;
+$page-padding-mobile: 1.5rem;
+$nav-height: 9rem;
+$modal-min-height: 20rem;
+$modal-max-height: 96vh;
+$modal-min-width: 50rem;
+$modal-max-width: 96vw;

@@ -1,0 +1,26 @@
+{
+    "name": "League of Legends Fantasy",
+    "short_name": "LoLF",
+    "icons": [
+        {
+            "src": "/i/icons/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/i/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/i/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/index.html",
+    "gcm_sender_id": "103953800507",
+    "display": "standalone",
+    "background_color": "#232323",
+    "theme_color": "#232323"
+}

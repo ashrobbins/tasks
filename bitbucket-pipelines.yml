@@ -1,0 +1,98 @@
+image:
+  name: 877926829948.dkr.ecr.us-east-1.amazonaws.com/build-image-node-8:latest
+  username: $ECR_USERNAME
+  password: $ECR_PASSWORD
+pipelines:
+  default:
+    - step:
+        name: Dev build
+        caches:
+          - node
+        script:
+          - npm i
+          - gulp dev:build
+        artifacts:
+          - dist/**
+    - step:
+        name: Deploy to dev
+        trigger: manual
+        deployment: dev
+        script:
+          - echo Deploying To  s3://$ASSETS_DEV_S3
+          - CREDENTIALS=`aws sts assume-role --role-arn "arn:aws:iam::496944043336:role/lolf-web-files-deploy" --role-session-name LoLFS3Session --duration-seconds 900 --output=json`
+          - export AWS_ACCESS_KEY_ID=`echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId'`
+          - export AWS_SECRET_ACCESS_KEY=`echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey'`
+          - export AWS_SESSION_TOKEN=`echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken'`
+          - export AWS_EXPIRATION=`echo ${CREDENTIALS} | jq -r '.Credentials.Expiration'`
+          - aws s3 sync dist/ s3://$ASSETS_DEV_S3 --cache-control max-age=1
+          - aws s3 cp dist/ver/version.txt s3://$ASSETS_DEV_S3 --cache-control max-age=1
+  branches:
+    develop:
+      - step:
+          name: Dev build
+          caches:
+            - node
+          script:
+            - npm i
+            - gulp dev:build
+          artifacts:
+            - dist/**
+      - step:
+          name: Deploy to dev
+          deployment: dev
+          script:
+            - echo Deploying To  s3://$ASSETS_DEV_S3
+            - CREDENTIALS=`aws sts assume-role --role-arn "arn:aws:iam::496944043336:role/lolf-web-files-deploy" --role-session-name LoLFS3Session --duration-seconds 900 --output=json`
+            - export AWS_ACCESS_KEY_ID=`echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId'`
+            - export AWS_SECRET_ACCESS_KEY=`echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey'`
+            - export AWS_SESSION_TOKEN=`echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken'`
+            - export AWS_EXPIRATION=`echo ${CREDENTIALS} | jq -r '.Credentials.Expiration'`
+            - aws s3 sync dist/ s3://$ASSETS_DEV_S3 --cache-control max-age=1
+            - aws s3 cp dist/ver/version.txt s3://$ASSETS_DEV_S3 --cache-control max-age=1
+    release/*:
+      - step:
+          name: Test build
+          caches:
+            - node
+          script:
+            - npm i
+            - gulp test:build
+          artifacts:
+            - dist/**
+      - step:
+          name: Deploy to test
+          trigger: manual
+          deployment: test
+          script:
+            - echo Deploying To  s3://$ASSETS_TEST_S3
+            - CREDENTIALS=`aws sts assume-role --role-arn "arn:aws:iam::496944043336:role/lolf-web-files-deploy" --role-session-name LoLFS3Session --duration-seconds 900 --output=json`
+            - export AWS_ACCESS_KEY_ID=`echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId'`
+            - export AWS_SECRET_ACCESS_KEY=`echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey'`
+            - export AWS_SESSION_TOKEN=`echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken'`
+            - export AWS_EXPIRATION=`echo ${CREDENTIALS} | jq -r '.Credentials.Expiration'`
+            - aws s3 sync dist/ s3://$ASSETS_TEST_S3 --cache-control max-age=64000
+            - aws s3 cp dist/ver/version.txt s3://$ASSETS_TEST_S3 --cache-control max-age=64000
+  tags:
+    v*:
+      - step:
+        name: Prod build
+        caches:
+          - node
+        script:
+          - npm i
+          - gulp prod:build
+        artifacts:
+          - dist/**
+      - step:
+        name: Deploy to prod
+        trigger: manual
+        deployment: production
+        script:
+          - echo Deploying To  s3://$ASSETS_PROD_S3
+          - CREDENTIALS=`aws sts assume-role --role-arn "arn:aws:iam::496944043336:role/lolf-web-files-deploy" --role-session-name LoLFS3Session --duration-seconds 900 --output=json`
+          - export AWS_ACCESS_KEY_ID=`echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId'`
+          - export AWS_SECRET_ACCESS_KEY=`echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey'`
+          - export AWS_SESSION_TOKEN=`echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken'`
+          - export AWS_EXPIRATION=`echo ${CREDENTIALS} | jq -r '.Credentials.Expiration'`
+          - aws s3 sync dist/ s3://$ASSETS_PROD_S3 --cache-control max-age=31536000
+          - aws s3 cp dist/ver/version.txt s3://$ASSETS_PROD_S3 --cache-control max-age=31536000

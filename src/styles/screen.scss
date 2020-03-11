@@ -1,0 +1,24 @@
+/* FRAMEWORKS
+========================================================================== */
+
+/* SETTINGS
+========================================================================== */
+
+@import "includes/settings/normalize";
+@import "includes/settings/variables";
+@import "includes/global/mixins";
+
+/* LAYOUT
+========================================================================== */
+
+/* GLOBAL
+========================================================================== */
+
+@import "includes/global/typography";
+@import "includes/global/global";
+@import "includes/global/layout";
+@import "includes/global/utils";
+
+/* COMPONENTS
+========================================================================== */
+@import "components/**/*";

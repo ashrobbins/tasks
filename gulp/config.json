@@ -1,0 +1,66 @@
+{
+    "webserver": {
+        "host": "localhost",
+        "port": 3333
+    },
+    "src": {
+        "folder": "./src",
+        "styles": {
+            "css": "./src/styles/**/*.scss",
+            "index": "./src/styles/*.scss"
+        },
+        "images": "./src/i/**/*",
+        "html": {
+            "index": {
+                "dev": "./index.html",
+                "test": "./index-test.html",
+                "prod": "./index-prod.html"
+            }
+        },
+        "pwa": {
+            "manifest": "./manifest.json",
+            "sw": "./sw.js"
+        },
+        "polyfill": "./node_modules/babel-polyfill/dist/polyfill.min.js",
+        "scripts": "./src/scripts/**/*.js",
+        "fonts": "./src/fonts/*",
+        "data": "./src/mock-data/*"
+    },
+    "dist": {
+        "folder": "./dist",
+        "styles": "./dist/styles",
+        "images": "./dist/i",
+        "fonts": "./dist/fonts/",
+        "scripts": "./dist/scripts/",
+        "bundle": {
+            "unminified": "./dist/scripts/bundle.js"
+        },
+        "transpiled": {
+            "folder": "./dist/transpiled",
+            "index": "./dist/transpiled/index.js"
+        },
+        "data": "./dist/mock-data"
+    },
+    "deploy_src": [
+        "./dist/**/*"
+    ],
+    "test": {
+        "path": "src/tests/**/*-test.js"
+    },
+    "s3": {
+        "resources": {
+            "profile": "platform-s3",
+            "region": "us-east-1",
+            "bucket": "lolf-web-files",
+            "dev": {
+                "path": "/resources/dev/"
+            },
+            "test": {
+                "path": "/resources/test/"
+            },
+            "prod": {
+                "path": "/resources/prod/"
+            }
+        }
+    }
+}

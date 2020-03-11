@@ -1,0 +1,8 @@
+dist/**/*
+node_modules/**/*
+**/*.min.js
+gulpfile.js
+gulp/**
+src/tests/**/*
+src/scripts/mock-data/**/*
+sw.js

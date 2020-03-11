@@ -1,0 +1,69 @@
+/* Resets */
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+ul, ol {
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+
+	li {
+		list-style-type: none;
+	}
+}
+
+::placeholder {
+    color: $txt-primary;
+}
+
+/* Global */
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: $background-gradient;
+	@include primary-font--regular;
+	font-size: 1.4em;
+	color: $txt-primary;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	-webkit-tap-highlight-color: transparent;
+	height: 100%;
+	min-height: 100%;
+}
+
+#app {
+	height: 100vh;
+}
+
+ul {
+	margin-bottom: 3rem;
+}
+
+section > h2 {
+	margin-bottom: 3rem;
+	@include primary-font--bold;
+}
+
+button {
+
+	&[disabled] {
+		opacity: .5;
+	}
+}

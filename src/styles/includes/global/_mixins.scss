@@ -1,0 +1,29 @@
+/* Mixins */
+@mixin clearfix {
+    &:before {
+        content: '';
+        display: block;
+    }
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+/*
+ * Adds hover and focus styles for tablet and up
+ * Only keeps focus styles for below tablet
+ */
+
+@mixin hover {
+    &:focus {
+        @content;
+    }
+    @media (min-width: 860px) {
+        &:hover {
+            @content;
+        }
+    }
+}

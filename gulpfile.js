@@ -1,0 +1,12 @@
+require('gulp-template');
+config = require( './gulp/config.json' );
+require('./gulp/gulp.require.js');
+require('./gulp/gulp.base.js');
+require('./gulp/gulp.deploy.js');
+require('./gulp/gulp.html.js');
+require('./gulp/gulp.pwa.js');
+require('./gulp/gulp.images.js');
+require('./gulp/gulp.styles.js');
+require('./gulp/gulp.scripts.js');
+require('./gulp/gulp.fonts.js');
+require('./gulp/gulp.data.js');

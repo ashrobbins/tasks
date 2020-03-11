@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <title>LoLF</title>
+
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+
+    <!-- Adobe font include -->
+    <link rel="stylesheet" href="https://use.typekit.net/bcb1odl.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" media="all" href="styles/main.min.css">
+
+    <link rel="shortcut icon" href="i/favicon/favicon.ico" />
+</head>
+  <body>
+    <div id="app"></div>
+
+    <script src="scripts/polyfill.min.js"></script>
+    <script src="scripts/bundle.min.js"></script>
+
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+          .then(function() {
+                console.log('Service Worker Registered');
+          });
+      }
+    </script>
+  </body>
+</html>

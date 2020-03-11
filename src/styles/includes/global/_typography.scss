@@ -1,0 +1,62 @@
+/* Typography */
+
+@mixin primary-font--regular {
+    font-family: $primary-font, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 400!important;
+}
+
+@mixin primary-font--bold {
+    font-family: $primary-font, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 900!important;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 3rem;
+}
+
+h2 {
+	font-size: 2.2rem;
+}
+
+h3 {
+	font-size: 1.8rem;
+}
+
+h4 {
+	font-size: 1.6rem;
+}
+
+h5 {
+	font-size: 1.4rem;
+}
+
+h6 {
+	font-size: 1.2rem;
+}
+
+a {
+	text-decoration: none;
+	color: $accent-primary;
+
+	&:visited {
+		color: $accent-primary;
+	}
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+p {
+	color: $txt-primary;
+	line-height: 1.6;
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

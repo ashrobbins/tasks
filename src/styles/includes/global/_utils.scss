@@ -1,0 +1,31 @@
+
+.u-text-white {
+    color: #fff;
+}
+
+.u-body-no-scroll {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.u-bold {
+    @include primary-font--regular;
+}
+
+.u-margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.u-hide-tablet {
+    @media (max-width: $break-tablet) {
+        display: none !important;
+    }
+}
+
+.u-show-tablet {
+    display: none;
+    @media (max-width: $break-tablet) {
+        display: block !important;
+    }
+}
