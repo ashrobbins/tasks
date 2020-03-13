@@ -71,8 +71,7 @@ gulp.task('dev:build', function () {
             'copy:fonts',
             'copy:data',
             'browserify'
-        ],
-        ['write:version']
+        ]
     )
 });
 
@@ -89,8 +88,7 @@ gulp.task('test:build', function () {
             'copy:fonts',
             'copy:data',
             'browserify'
-        ],
-        ['write:version'],
+        ]
         ['bundle:build']
     )
 });
@@ -108,8 +106,7 @@ gulp.task('prod:build', function () {
             'copy:fonts',
             'copy:data',
             'browserify',
-        ],
-        ['write:version'],
+        ]
         ['bundle:build']
     )
 });
