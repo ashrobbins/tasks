@@ -1,9 +1,9 @@
 {
-  "name": "lolf-web",
+  "name": "tasks",
   "version": "1.0.0",
-  "description": "League of Legends Fantasy",
+  "description": "Ash Tasks",
   "keywords": [],
-  "author": "Pulselive",
+  "author": "Ash Robbins",
   "private": true,
   "license": "ISC",
   "scripts": {
