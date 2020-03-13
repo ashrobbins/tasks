@@ -1,4 +1,3 @@
-require('gulp-template');
 config = require( './gulp/config.json' );
 require('./gulp/gulp.require.js');
 require('./gulp/gulp.base.js');
