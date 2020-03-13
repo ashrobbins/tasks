@@ -46,21 +46,5 @@
     ],
     "test": {
         "path": "src/tests/**/*-test.js"
-    },
-    "s3": {
-        "resources": {
-            "profile": "platform-s3",
-            "region": "us-east-1",
-            "bucket": "lolf-web-files",
-            "dev": {
-                "path": "/resources/dev/"
-            },
-            "test": {
-                "path": "/resources/test/"
-            },
-            "prod": {
-                "path": "/resources/prod/"
-            }
-        }
     }
 }
