@@ -19,6 +19,8 @@
     "eslint": "^3.17.1",
     "eslint-plugin-babel": "^3.2.0",
     "eslint-plugin-react": "^6.10.0",
+    "firebase": "^5.7.0",
+    "re-base": "4.0.0",
     "git-rev": "^0.2.1",
     "gulp-awspublish": "^4.0.0",
     "gulp-sftp": "^0.1.5",

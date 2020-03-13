@@ -1,0 +1,32 @@
+.site-header {
+    margin-bottom: 4rem;
+    padding: 3rem 0;
+    background-color: $accent-primary;
+    color: $white;
+
+    h1 {
+        margin-bottom: -2rem;
+        font-size: 3rem;
+    }
+}
+
+.new-task-form,
+.new-task-form__input {
+    width: 100%;
+}
+
+.new-task-form__input {
+    position: relative;
+    top: 4.5rem;
+    padding: 0 1rem;
+    font-size: 2rem;
+    line-height: 4rem;
+    background-color: #e72c42;
+    color: $white;
+    border: 0;
+    border-radius: .4rem;
+
+    &::placeholder {
+        color: #eeeeee;
+    }
+}

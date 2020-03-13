@@ -1,12 +1,21 @@
-import * as actions from '../../actions';
-
 /**
-    Action: Hydrates redux store with app context
+    Action: Hydrates redux store with tasks
     @param {Object} payload - payload object
 */
-// export function setAppContext( payload ) {
-//     return {
-//         type: 'SET_APP_CONTEXT',
-//         payload
-//     };
-// }
+export function storeTasks( payload ) {
+    return {
+        type: 'STORE_TASKS',
+        payload
+    };
+}
+
+/**
+    Action: Updates tasks.filter with tag provided
+    @param {Object} payload - payload object
+*/
+export function updateFilter( payload ) {
+    return {
+        type: 'UPDATE_FILTER',
+        payload
+    };
+}

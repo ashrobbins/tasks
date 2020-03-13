@@ -34,9 +34,9 @@ html {
 }
 
 body {
-	background: $background-gradient;
+	background: $page-bg;
 	@include primary-font--regular;
-	font-size: 1.4em;
+	font-size: 2rem;
 	color: $txt-primary;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;

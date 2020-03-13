@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { CSSTransition } from 'react-transition-group';
 import classNames from 'classnames';
 
-import * as constants from '../../constants';
+import * as constants from '../constants';
 
 class Modal extends React.Component {
 

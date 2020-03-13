@@ -1,13 +1,18 @@
 /* Colours */
 $black: #000;
 $white: #ffffff;
-$accent-primary: #FFD978;
-$txt-primary: $white;
-$txt-dark: #1c1325;
+$accent-primary: #ff3c52;
+$txt-primary: #222222;
+$txt-dark: #000000;
+$page-bg: #f3f3f3;
+
+$tag-pl: #963cff;
+$tag-mm: #38ccb8;
+$tag-lolf: #f3ba29;
+$tag-line: tomato;
 
 /* Component Specific Colours */
 $input-gradient: linear-gradient(to top, #2c2433, #4e4450 );
-$background-gradient: linear-gradient(225deg, #86338C, #38003C);
 
 /* Fonts */
 $primary-font: 'Source Sans Pro', sans-serif;
@@ -28,7 +33,7 @@ $level-four: 40;
 $level-five: 50;
 
 /* Layout */
-$wrapper-width: 108.6rem;
+$wrapper-width: 43rem;
 $page-padding: 3rem;
 $page-padding-mobile: 1.5rem;
 $nav-height: 9rem;

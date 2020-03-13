@@ -1,6 +1,6 @@
 {
-    "name": "League of Legends Fantasy",
-    "short_name": "LoLF",
+    "name": "Ash Tasks",
+    "short_name": "Tasks",
     "icons": [
         {
             "src": "/i/icons/icon-128x128.png",
@@ -21,6 +21,6 @@
     "start_url": "/index.html",
     "gcm_sender_id": "103953800507",
     "display": "standalone",
-    "background_color": "#232323",
-    "theme_color": "#232323"
+    "background_color": "#ff3c52",
+    "theme_color": "#ff3c52"
 }

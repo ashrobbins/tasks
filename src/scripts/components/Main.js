@@ -19,6 +19,7 @@ class Main extends React.Component {
         router: PropTypes.object
     };
 
+
     handleModalOpen = ( modalState = null ) => {
         this.props.openModal( modalState );
         document.body.classList.add( constants.NO_SCROLL_CLASS );

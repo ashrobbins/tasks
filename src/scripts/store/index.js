@@ -3,9 +3,6 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 
-import * as constants from '../constants';
-import * as config from '../config';
-
 import rootReducer from '../reducers/index';
 
 // create an object for the default data
@@ -17,7 +14,10 @@ const defaultState = {
         isOpen: false,
         context: null
     },
-    tasks: []
+    tasks: {
+        list: [],
+        filter: null
+    }
 };
 
 /*

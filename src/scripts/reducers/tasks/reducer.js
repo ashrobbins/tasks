@@ -2,13 +2,21 @@ function tasks( state = {}, action ) {
     const { type, payload } = action;
     switch ( type ) {
 
-        // case 'SET_APP_CONTEXT': {
+        case 'STORE_TASKS': {
 
-        //     return {
-        //         ...state,
-        //         context: payload
-        //     };
-        // }
+            return {
+                ...state,
+                list: payload
+            };
+        }
+
+        case 'UPDATE_FILTER': {
+
+            return {
+                ...state,
+                filter: payload
+            };
+        }
 
         default:
             return state;

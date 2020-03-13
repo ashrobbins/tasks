@@ -3,13 +3,13 @@ import { render } from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store from './store/';
-import { App, TaskList } from './components';
+import { App, Tasks } from './components';
 
 const router = (
     <Provider store={ store }>
         <Router history={ browserHistory }>
             <Route path="/" component={ App }>
-                <IndexRoute component={ TaskList }></IndexRoute>
+                <IndexRoute component={ Tasks }></IndexRoute>
             </Route>
         </Router>
     </Provider>
