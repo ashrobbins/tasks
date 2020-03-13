@@ -70,14 +70,51 @@ class Tasks extends React.Component {
     }
 
     render() {
-        const { tasks } = this.props;
-        const filteredTasks = this.filterTasks( tasks );
-        const starredTasks = filteredTasks.filter( task => !task.complete && task.starred );
-        const incompleteTasks = filteredTasks.filter( task => !task.complete && !task.starred );
-        const completeTasks = filteredTasks.filter( task => task.complete );
+        if ( this.props.tasks.list ) {
+            const { tasks } = this.props;
+            const filteredTasks = this.filterTasks( tasks );
+            const starredTasks = filteredTasks.filter( task => !task.complete && task.starred );
+            const incompleteTasks = filteredTasks.filter( task => !task.complete && !task.starred );
+            const completeTasks = filteredTasks.filter( task => task.complete );
 
+            return (
+                <Fragment>
+                    <header className="site-header">
+                        <div className="wrapper">
+                            <h1>Tasks</h1>
+
+                            <AddTaskForm addTask={ this.addTask } />
+                        </div>
+                    </header>
+                    <main>
+                        { tasks.filter ?
+                            <section className="filter wrapper">
+                                <span className="filter__name">{ tasks.filter }</span>
+                                <i className="fas fa-times task__control" onClick={ () => this.props.updateFilter( null ) }></i>
+                            </section> :
+                        null }
+
+                        { starredTasks.length ?
+                            <section className="tasks tasks--starred wrapper">
+                                <h2><i className="fas fa-star"></i>Priority</h2>
+                                { starredTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
+                            </section> :
+                        null }
+
+                        <section className="tasks tasks--incomplete wrapper">
+                            <h2><i className="fas fa-clipboard-list"></i>Back burner</h2>
+                            { incompleteTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
+                        </section>
+
+                        <section className="tasks tasks--complete wrapper">
+                            <h2><i className="fas fa-check"></i>Completed</h2>
+                            { completeTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateFilter={ this.props.updateFilter } /> )}
+                        </section>
+                    </main>
+                </Fragment>
+            );
+        }
         return (
-            <Fragment>
                 <header className="site-header">
                     <div className="wrapper">
                         <h1>Tasks</h1>
@@ -85,30 +122,8 @@ class Tasks extends React.Component {
                         <AddTaskForm addTask={ this.addTask } />
                     </div>
                 </header>
-                <main>
-                    { tasks.filter ?
-                        <section className="filter wrapper">
-                            <span className="filter__name">{ tasks.filter }</span>
-                            <i className="fas fa-times task__control" onClick={ () => this.props.updateFilter( null ) }></i>
-                        </section> :
-                    null }
-                    <section className="tasks tasks--starred wrapper">
-                        <h2><i className="fas fa-star"></i>Priority</h2>
-                        { starredTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
-                    </section>
-
-                    <section className="tasks tasks--incomplete wrapper">
-                        <h2><i className="fas fa-clipboard-list"></i>Back burner</h2>
-                        { incompleteTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
-                    </section>
-
-                    <section className="tasks tasks--complete wrapper">
-                        <h2><i className="fas fa-check"></i>Completed</h2>
-                        { completeTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateFilter={ this.props.updateFilter } /> )}
-                    </section>
-                </main>
-            </Fragment>
         );
+        
     }
 }
 
