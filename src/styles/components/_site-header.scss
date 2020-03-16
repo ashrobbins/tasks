@@ -19,7 +19,7 @@
     position: relative;
     top: 4.5rem;
     padding: 0 1rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 4rem;
     background-color: #e72c42;
     color: $white;
@@ -28,5 +28,9 @@
 
     &::placeholder {
         color: #eeeeee;
+    }
+
+    &:focus {
+        outline: 0;
     }
 }
