@@ -10,6 +10,7 @@ const router = (
         <Router history={ browserHistory }>
             <Route path="/" component={ App }>
                 <IndexRoute component={ Tasks }></IndexRoute>
+                <Route path="/index.html" component={ Tasks }></Route>
             </Route>
         </Router>
     </Provider>
