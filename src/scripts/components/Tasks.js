@@ -5,6 +5,8 @@ import base, { firebaseApp } from '../config/base';
 
 import { Task, AddTaskForm } from '../components';
 
+import moment from 'moment';
+
 class Tasks extends React.Component {
 
     static propTypes = {
@@ -41,8 +43,11 @@ class Tasks extends React.Component {
     }
 
     updateCompletion = ( key, status ) => {
+        const completion = status ? moment().format('DD-MM-YYYY') : null;
+
         firebaseApp.database().ref(`tasks/${ key }`).update({
-            complete: status
+            complete: status,
+            completedOn: completion
         });
         this.handleUpdateStore();
     }
@@ -123,7 +128,7 @@ class Tasks extends React.Component {
                     </div>
                 </header>
         );
-        
+
     }
 }
 

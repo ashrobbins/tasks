@@ -32,6 +32,7 @@ class Task extends React.Component {
         return (
             <Fragment>
                 <li className="task">
+                    { task.completedOn ? <span className="task__completed-on">{ task.completedOn }</span> : null }
                     <i className={ completionControlClasses } onClick={ () => this.props.updateCompletion( task.key, !task.complete ) }></i>
                     <span className={ tagClassNames } onClick={ () => this.props.updateFilter( task.tag ) }>{ task.tag }</span> { task.name }
                     { !task.complete ? <i className={ starredControlClasses } onClick={ () => this.props.updateStarred( task.key, !task.starred ) }></i> : null }
