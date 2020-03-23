@@ -44,7 +44,8 @@ class AddTaskForm extends React.Component {
                     name="taskName"
                     ref={ this.nameRef }
                     type="text"
-                    placeholder="What needs doing?"
+                    placeholder="Add task..."
+                    autoComplete="off"
                 />
             </form>
         );
