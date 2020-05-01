@@ -26,7 +26,8 @@ class Task extends React.Component {
             'task__tag--pl': task.tag === '#pl',
             'task__tag--lolf': task.tag === '#lolf',
             'task__tag--mm': task.tag === '#mm',
-            'task__tag--line': task.tag === '#line'
+            'task__tag--line': task.tag === '#line',
+            'task__tag--games': task.tag === '#games'
         });
 
         return (
