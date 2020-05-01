@@ -109,6 +109,10 @@
         &--line {
             color: $tag-line;
         }
+        
+        &--games {
+            color: $tag-games;
+        }
     }
 
     &__completed-on {
