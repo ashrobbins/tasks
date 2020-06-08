@@ -101,13 +101,13 @@ class Tasks extends React.Component {
 
                         { starredTasks.length ?
                             <section className="tasks tasks--starred wrapper">
-                                <h2><i className="fas fa-star"></i>Priority</h2>
+                                <h2><i className="fas fa-star"></i>Now</h2>
                                 { starredTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
                             </section> :
                         null }
 
                         <section className="tasks tasks--incomplete wrapper">
-                            <h2><i className="fas fa-clipboard-list"></i>Back burner</h2>
+                            <h2><i className="fas fa-clipboard-list"></i>Next</h2>
                             { incompleteTasks.map( ( task, i ) => <Task { ...this.props } task={ task } key={ task.key } deleteTask={ this.deleteTask } updateCompletion={ this.updateCompletion } updateStarred={ this.updateStarred } updateFilter={ this.props.updateFilter } /> )}
                         </section>
 

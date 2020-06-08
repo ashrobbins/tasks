@@ -109,6 +109,14 @@
         &--line {
             color: $tag-line;
         }
+
+        &--wr {
+            color: $tag-wr;
+        }
+
+        &--lfc {
+            color: $tag-lfc;
+        }
     }
 
     &__completed-on {
