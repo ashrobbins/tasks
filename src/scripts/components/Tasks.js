@@ -6,6 +6,7 @@ import base, { firebaseApp } from '../config/base';
 import { Task, AddTaskForm } from '../components';
 
 import moment from 'moment';
+import _ from 'underscore';
 
 class Tasks extends React.Component {
 
@@ -62,6 +63,9 @@ class Tasks extends React.Component {
     filterTasks = ( tasks ) => {
         const taskKeys = Object.keys( tasks.list );
         let taskList = Object.values( tasks.list );
+
+        taskList = _.sortBy( taskList, function( task ) { return task.completedOn; });
+        taskList.reverse();
 
         taskList.forEach( ( task, i ) => {
             task.key = taskKeys[ i ];
