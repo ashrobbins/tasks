@@ -64,9 +64,6 @@ class Tasks extends React.Component {
         const taskKeys = Object.keys( tasks.list );
         let taskList = Object.values( tasks.list );
 
-        taskList = _.sortBy( taskList, function( task ) { return task.completedOn; });
-        taskList.reverse();
-
         taskList.forEach( ( task, i ) => {
             task.key = taskKeys[ i ];
         });
