@@ -3,13 +3,12 @@
 
     h2 {
         margin-bottom: 1rem;
-        margin-left: 1rem;
-        font-size: 2rem;
-        color: darken($accent-primary, 30%);
+        font-size: 1.6rem;
+        color: $black;
 
         .fas {
             margin-right: 1rem;
-            font-size: 1.6rem;
+            font-size: 1.3rem;
 
             &.fa-star {
                 color: gold;
@@ -22,7 +21,7 @@
     }
 
     &--complete {
-        opacity: .3;
+        opacity: .1;
         transition: opacity .2s ease;
 
         &:hover {
@@ -33,26 +32,17 @@
 
 .task {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     list-style: none;
     position: relative;
     margin-bottom: .5rem;
-    padding: .8rem;
+    padding: .8rem 0;
     font-size: 1.3rem;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    
-    &__description {
-        flex: 0 0 100%;
-    }
+    align-items: top;
 
     &__control {
-        padding: 1rem .6rem 0;
+        padding: .3rem;
         color: #eaeaea;
-        border-radius: .2rem;
         cursor: pointer;
         transition: all .2s ease;
 
@@ -61,7 +51,11 @@
         }
 
         &--completion {
-            margin-right: .5rem;
+            width: 2rem;
+            height: 2rem;
+            margin-top: .3rem;
+            margin-right: .7rem;
+            border:1px solid $black;
 
             &:hover {
                 color: #74bd6c;
@@ -85,6 +79,12 @@
             &:hover {
                 color: #e73c3c;
             }
+        }
+
+        &--starred,
+        &--star,
+        &--delete {
+            display: none;
         }
     }
 

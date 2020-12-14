@@ -1,10 +1,5 @@
 .wrapper {
-    width:96%;
+    width:92%;
 	max-width: $wrapper-width;
 	margin: 0 auto;
-    padding: 0 $page-padding;
-
-    @media(max-width: $break-mobile) {
-        padding: 0 $page-padding-mobile;
-    }
 }
